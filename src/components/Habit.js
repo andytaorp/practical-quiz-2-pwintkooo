@@ -7,15 +7,17 @@ import React from "react";
  * TODO: implement the Habit component here
  */
 export default function Habit({ habit, onToggleHabit, onDeleteHabit }) {
-  return (
-    <li style={{ textDecoration: habit.completed ? "line-through" : "none" }}>
-      <input
-        type="checkbox"
-        checked={habit.completed}
-        onChange={() => onToggleHabit(habit.id)}
-      />
-      <span>{habit.name}</span>
-      <button onClick={() => onDeleteHabit(habit.id)}>Delete</button>
-    </li>
-  );
+    return (
+        <li>
+            <input
+                type="checkbox"
+                checked={habit.completed}
+                onChange={() => onToggleHabit(habit.id)}
+            />
+            <span style={{textDecoration: habit.completed ?"line-through" : ""}}>
+                {habit.name}
+            </span>
+            <button onClick={() => onDeleteHabit(habit.id)}>Delete</button>
+        </li>
+    );
 }
